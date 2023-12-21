@@ -88,7 +88,7 @@ return (
                     <label for="">Password</label>
                     <input type="Password" name="Password" id="Password" placeholder="Enter Password..." value={Password} onChange={handlePassword} />
                 </div>
-                <h4 className='Success' >{Success}</h4>
+                <h4 className='Success'>{Success}</h4>
                 <button onClick={EditUser} type="submit">Save Changes</button>
             </form>
         </section> 
@@ -96,4 +96,4 @@ return (
 )
 }
 
-export default EditDetails
+export default EditDetails 

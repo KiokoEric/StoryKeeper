@@ -1,6 +1,7 @@
 import React from 'react';
 import "../Register/Register.css";
 import Axios from "axios";
+import { useSnackbar } from 'notistack';
 import { useState } from 'react';
 import {useNavigate} from "react-router-dom";
 
@@ -10,6 +11,7 @@ const Register = () => {
     const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
     const [Error, setError] = useState("")
+    const { enqueueSnackbar } = useSnackbar();
 
     const navigate = useNavigate()
 
@@ -36,11 +38,11 @@ const Register = () => {
             setError(false)
             await Axios.post("http://localhost:4000/User/Registration", data) 
             .then(() => {
-                alert("Registration Completed! Kindly Log in")
+                enqueueSnackbar("Registration Completed! Kindly Log in", {variant: "success"})
                 navigate("/Login")
             }) 
         } catch (error) {
-            setError("Invalid Username or Email!")  
+            enqueueSnackbar("Registration Failed!" , {variant: "error"} )  
             console.error(error)
         }
     }

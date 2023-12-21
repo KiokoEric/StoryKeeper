@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
+import { useSnackbar } from 'notistack';
 import { useCookies } from "react-cookie";
 import { Link } from 'react-router-dom';
 import { useGetUserID } from "../../Components/Hooks/UseGetUserID";
@@ -11,6 +12,7 @@ const Home = () => {
     const [Cookie, setCookie] = useCookies(["auth_token"]);
     const [isLoading, setIsLoading] = useState(true);
     const [Books, setBooks] = useState([])
+    const { enqueueSnackbar } = useSnackbar();
 
     const userID = useGetUserID();
 
@@ -18,7 +20,7 @@ const Home = () => {
     useEffect(() => {
 
     const fetchBooks = async () => {
-        await Axios.get(`http://localhost:4000/Books/AllBooks`, {
+        await Axios.get(`http://localhost:4000/Books/${userID}/Books`, { 
         headers: { authorization: Cookie.auth_token },
         }) 
         .then((Response) => {
@@ -34,7 +36,7 @@ const Home = () => {
         fetchBooks()
     }
 
-    },[userID])
+    },[Books])
 
     // Delete Book
 
@@ -62,25 +64,24 @@ return (
             Books.map((Book) => { 
             return (
             <div key={Book.index} >
-                <Link to={`/Information/${Book._id}`}  className='Information'> 
-                    <figure>
+                <figure>
+                    <Link to={`/Information/${Book._id}`}  className='Information'> 
                         <img src={Book.Image} alt="" />
+                    </Link>
                         <div>
                             <Link to={`/Edit/${Book._id}`} key={Book._id} >
                                 <i id='Edit' class="fa-solid fa-pen-to-square"></i>
                             </Link>
                             <i id='Delete' onClick={() => handleDelete(Book._id)} class="fa-solid fa-trash"></i>
                         </div>
-                    </figure>
-                    <figcaption  >
+                    <figcaption>
                         <h2>{Book.Title}</h2>
                     </figcaption>
-                </Link>
+                </figure>
             </div>
             )
             }) : <h2 className='Failure'>No Results Found.</h2> 
             )
-            
             }
         </section>
     </div>

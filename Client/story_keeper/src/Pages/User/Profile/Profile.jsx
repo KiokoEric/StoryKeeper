@@ -34,7 +34,7 @@ const Profile = () => {
 
         const FetchUser =() => {
         try{
-            Axios.get(`http://localhost:4000/User/${_id}`, {
+            Axios.get(`http://localhost:4000/User/${ID}`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Data) => { 
@@ -53,17 +53,13 @@ const Profile = () => {
     }, [])
 
     const EditUser = () => {
-        navigate(`/MyProfile/${_id}`)
+        navigate(`/MyProfile/${ID}`)
     } 
 
-    const DeleteUser = (id) => {
-        Axios.delete(`http://localhost:4000/Users/Delete/${id}`, {
-            headers: { authorization: Cookie.auth_token }
-        })
-        .then(() => { 
-            setSuccess("Deleted Successfully.")
-        })
+    const DeleteUser = () => {
+        navigate(`/DeleteProfile`)
     }
+
 
 return (
     <div className='Profile'>

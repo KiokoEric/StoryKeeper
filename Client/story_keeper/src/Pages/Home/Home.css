@@ -25,15 +25,17 @@
     align-items: center;
     justify-content: center;
 }
-.Information {
+.Home figure {
     color: black;
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 0.5rem;
     justify-content: center;
     margin: auto;
-    padding-bottom: 4.5rem;
+    padding-bottom: 1rem;
     text-align: center;
+}
+.Information {
     text-decoration: none;
 }
 .Information div {
@@ -53,7 +55,7 @@
     border-radius: 4px;
     width: 250px;
 }
-.Information figure div {
+.Home figure div {
     display: flex;
     flex-direction: row;
     column-gap: 1rem;
@@ -63,7 +65,6 @@
     color: black;
     border-radius: 50%;
     cursor: pointer;
-    margin-top: 0.5rem;
     margin-left: 14.5rem;
     padding: 1rem 1rem;
 }
@@ -71,8 +72,6 @@
     background-color: orangered;
     border-radius: 50%;
     cursor: pointer;
-    margin-top: 0.5rem;
-    margin-left: 0rem;
     padding: 1rem 1rem;
 }
 #Edit:hover {
@@ -83,8 +82,9 @@
     background-color: black;
     color: orangered;
 }
-.Information figcaption h2 {
+.Home figcaption h2 {
     margin-bottom: 0.5rem;
+    text-align: center;
 }
 .Failure {
     color: red;
@@ -94,4 +94,91 @@
     justify-content: center;
     font-size: 40px;
     width: 1300px;
+}
+
+@media (max-width: 768px) {
+    .Home section:first-child {
+        height: 200px;
+        margin: auto;
+        margin-bottom: 2rem;
+        width: 768px;
+    }
+    .Home section:first-child h1 {
+        font-size: 45px;
+    }
+    .Home section:last-child {
+        display: grid;
+        grid-template-columns: 350px 350px;
+        align-items: center;
+        justify-content: center;
+    }
+    .Information img {
+        border-radius: 3px;
+        width: 300px;
+    }
+    .Gif {
+        margin: auto;
+        width: 768px;
+    }
+    #Edit {
+        margin-left: 12.5rem;
+    }
+}
+
+@media (max-width: 428px) {
+    .Home section:first-child {
+        height: 200px;
+        margin: auto;
+        margin-bottom: 2rem;
+        width: 428px;
+    }
+    .Home section:first-child h1 {
+        font-size: 45px;
+    }
+    .Home section:last-child {
+        display: grid;
+        grid-template-columns: 428px;
+        align-items: center;
+        justify-content: center;
+    }
+    .Information img {
+        border-radius: 3px;
+        width: 350px;
+    }
+    .Gif {
+        margin: auto;
+        width: 428px;
+    }
+    #Edit {
+        margin-left: 16.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .Home section:first-child {
+        height: 200px;
+        margin: auto;
+        margin-bottom: 2rem;
+        width: 375px;
+    }
+    .Home section:first-child h1 {
+        font-size: 40px;
+    }
+    .Home section:last-child {
+        display: grid;
+        grid-template-columns: 375px;
+        align-items: center;
+        justify-content: center;
+    }
+    .Information img {
+        border-radius: 3px;
+        width: 300px;
+    }
+    .Gif {
+        margin: auto;
+        width: 375px;
+    }
+    #Edit {
+        margin-left: 13.5rem;
+    }
 }

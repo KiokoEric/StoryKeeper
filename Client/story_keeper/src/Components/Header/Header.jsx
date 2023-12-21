@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useGetUserID } from "../Hooks/UseGetUserID";
 import { useCookies } from "react-cookie";
 import { Link, useNavigate } from 'react-router-dom';
@@ -6,6 +6,7 @@ import "../Header/Header.css"
 
 const Header = () => {
 
+    const [ExtendNavbar,setExtendNavbar ] = useState(true)
     const [ Cookie, setCookie ] = useCookies(["auth_token"]);
 
     const userID = useGetUserID();
@@ -22,7 +23,7 @@ return (
     <div className='Header' >
         <article>
             <section>
-                <Link to="/" className='Link Logo' > 
+                <Link to="/" className='Logo' > 
                     <figure>
                         <i class="fa-solid fa-book-open"></i>
                     </figure>
@@ -30,27 +31,50 @@ return (
                 </Link>
             </section>
             <section>
-                <nav>
-                    <Link to="/" className='Link' >Home</Link>
-                    <Link to="/Create" className='Link' >Create Book</Link> 
-                </nav>
-            </section>
-            <section>
-                <Link to="/Registration" className='UserLink'>Sign Up</Link>
-                {
+                <nav className={ExtendNavbar ? "CloseNavigation" : "OpenNavigation" } onClick={() => setExtendNavbar(false)}>
+                    <Link Link to="/" className='Link Navigate'  >
+                        Home
+                    </Link>
+                    <Link Link to="/Create" className='Link Navigate'  >
+                        Create Book
+                    </Link>
+                    <Link to="/Registration" className='Link Navigate Hidden'>
+                        Sign Up
+                    </Link>
+                    {
                         !Cookie.auth_token ?
                         (
-                            <Link to="/Login">
-                                <button className='Logout' >Login</button>
+                            <Link to="/Login" className='Link Navigate Hidden' >
+                                <p>Login</p>
                             </Link>
                         ) : 
                         (
-                            <button onClick={Logout} type="submit" className='Logout'>Logout</button>
+                            <p onClick={Logout} type="submit" className='Link Navigate Hidden' >Logout</p>
                         )
                     }
-                    <Link to={`/Profile/${userID}`} >
-                        <i id='User' class="fa-solid fa-user"></i>
-                    </Link>
+                </nav>
+            </section>
+            <section> 
+                <figure onClick={()=> {setExtendNavbar((curr) => !curr)}}>
+                    {ExtendNavbar ? <i id="Bars" class="fa-solid fa-bars"></i> : <i id='Bars' class="fa-solid fa-xmark"></i> }
+                </figure>
+                <Link to="/Registration" className='User' >
+                    <button type="submit">Sign Up</button>
+                </Link>
+                {
+                    !Cookie.auth_token ?
+                    (
+                        <Link to="/Login" className='User' >
+                            <button type="submit">Login</button>
+                        </Link>
+                    ) : 
+                    (
+                        <button onClick={Logout} type="submit" className='Logout'>Logout</button>
+                    )
+                }
+                <Link to={`/Profile/${userID}`} >
+                    <i id='User' class="fa-solid fa-user"></i>
+                </Link>
             </section>
         </article>
     </div>

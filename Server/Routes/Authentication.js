@@ -61,7 +61,7 @@ UserRouter.get('/:id', async (req, res) => {
     } catch (error) {
     res.status(500).json({ message: 'Server Error' });
     }
-});
+}); 
 
 UserRouter.put("/:id", async (req, res) => {
     try{
@@ -75,9 +75,9 @@ UserRouter.put("/:id", async (req, res) => {
 
 // DELETE
 
-UserRouter.delete("/:id", async (req, res) => {
+UserRouter.delete("/Delete/:id", async (req, res) => {
     try {
-        const userId = req.user.id;
+        const userId = req.params.id;
 
         // Delete the user from the database
         await User.findByIdAndDelete(userId);

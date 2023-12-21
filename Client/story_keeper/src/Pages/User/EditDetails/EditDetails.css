@@ -101,7 +101,7 @@
 
 @media (max-width:768px) {
     .MyProfile section:first-child {
-        background-image: url("../../../Images/Profile_HomePage.jpg");
+        background-image: url("../../../Images/MyProfile.jpg");
         background-position: center;
         background-repeat: no-repeat;
         border-radius: 5px;
@@ -119,7 +119,7 @@
 
 @media (max-width:428px) {
     .MyProfile section:first-child {
-        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../../../Images/Profile_HomePage.jpg");
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../../../Images/MyProfile.jpg");
         background-position: center 75%;
         background-repeat: no-repeat;
         border-radius: 5px;
@@ -156,7 +156,7 @@
 
 @media (max-width:375px) {
     .MyProfile section:first-child {
-    background-image: url("../../../Images/Profile_HomePage.jpg");
+    background-image: url("../../../Images/MyProfile.jpg");
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 5px;

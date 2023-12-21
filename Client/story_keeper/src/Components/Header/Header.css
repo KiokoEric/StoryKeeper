@@ -19,13 +19,14 @@
     display: flex;
     flex-direction: row;
     column-gap: 0.5rem;
+    margin-left: 0.5rem;
     text-decoration: none;
 }
 .Header section:first-child i {
     color: black;
     font-size: 28px;
     margin-top: 0.28rem;
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
 }
 .Header nav {
     display: flex;
@@ -41,6 +42,9 @@
 }
 .Link:hover {
     color: orangered;
+}
+.Hidden {
+    display: none;
 }
 .Header section:last-child{
     display: flex;
@@ -93,4 +97,158 @@
 }
 .Logout:hover {
     color: white;
+}
+#Bars {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .Header article {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        padding: 0.2rem 0.2rem 0.3rem 0.2rem;
+        width: 768px;
+    }
+    #Bars {
+        display: none;
+    }
+    .Hidden {
+        display: none;
+    }
+}
+
+@media (max-width:428px) {
+    .Header article {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        padding: 0.2rem 0.2rem 0.3rem 0.2rem;
+        width: 420px;
+    }
+    .Header article section:nth-child(2) nav {
+        background-color: white;
+        border-radius: 0px 0px 0px 10px;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.2rem;
+        height: 220px;
+        margin-top: -0.8rem;
+        margin-left: -2rem;
+        padding-top: 0.8rem;
+        width: 150px;
+    }
+    .OpenNavigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 3.3rem;
+        left: 15rem;
+        transition: all 0.5s linear;
+        transform: translateX(60%);
+        width: 350px;
+    }
+    .CloseNavigation{
+        position: absolute;
+        top: 3.5rem;
+        transform: translateX(180%);
+        transition: all 0.5s linear;
+    }
+    .Hidden {
+        display: block;
+    }
+    #Bars {
+        display: block;
+        margin-top: 0.5rem;
+        margin-left: -1.5rem;
+    }
+    .Navigate {
+        border-bottom: 1px solid black;
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+        width: 150px;
+    }
+    .Header article section:last-child button {
+        display: none;
+    }
+    #Favourites {
+        display: block;
+    }
+    #User {
+        margin-left: -2rem;
+        margin-right: 1rem;
+    }
+
+}
+
+@media (max-width:375px) {
+    .Header article {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        padding: 0.2rem 0.2rem 0.3rem 0.2rem;
+        width: 375px;
+    }
+    .Header article section:nth-child(2) nav {
+        background-color: white;
+        border-radius: 0px 0px 0px 10px;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.2rem;
+        height: 220px;
+        margin-top: -0.8rem;
+        margin-left: -2rem;
+        padding-top: 0.8rem;
+        width: 150px;
+    }
+    .OpenNavigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 3.3rem;
+        left: 12rem;
+        transition: all 0.5s linear;
+        transform: translateX(60%);
+        width: 350px;
+    }
+    .CloseNavigation{
+        position: absolute;
+        top: 3.5rem;
+        transform: translateX(180%);
+        transition: all 0.5s linear;
+    }
+    .Hidden {
+        display: block;
+    }
+    #Bars {
+        display: block;
+        margin-top: 0.5rem;
+        margin-left: 0rem;
+    }
+    .Navigate {
+        border-bottom: 1px solid black;
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+        width: 150px;
+    }
+    .Header article section:last-child button {
+        display: none;
+    }
+    #Favourites {
+        display: block;
+    }
+    #User {
+        margin-left: -1.5rem;
+        margin-right: 0.5rem;
+    }
 }

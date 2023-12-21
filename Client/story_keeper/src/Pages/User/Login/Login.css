@@ -4,16 +4,15 @@
     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../../../Images/Register_HomePage.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 300px;
+    height: 200px;
     margin: auto;
     margin-bottom: 1rem;
     padding-bottom: 5rem;
-    width: 1430px;
+    width: 100%;
 }
 .Login section:first-child h1 { 
     color: white;
@@ -90,9 +89,9 @@
     width: 400px;
 }
 
-/* @media (max-width:768px) {
+@media (max-width:768px) {
     .Login section:first-child {
-        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../../../Images/Login.jpg");
+        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../../../Images/Register_HomePage.jpg);
         background-position: center;
         background-repeat: no-repeat;
         border-radius: 5px;
@@ -110,7 +109,7 @@
 
 @media (max-width:428px) {
     .Login section:first-child {
-        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../../../Images/Login_HomePage.jpg");
+        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../../../Images/Register_HomePage.jpg);
         background-position: top;
         background-repeat: no-repeat;
         border-radius: 5px;
@@ -147,7 +146,7 @@
 
 @media (max-width:375px) {
 .Login section:first-child {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../../../Images/Login_HomePage.jpg");
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../../../Images/Register_HomePage.jpg);
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 5px;
@@ -180,4 +179,4 @@
     text-align: center;
     width: 320px;
 }
-} */
+}

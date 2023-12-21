@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from "axios";
+import { useSnackbar } from 'notistack';
 import { useState } from 'react';
 import { useCookies } from "react-cookie";
 import "../Login/Login.css";
@@ -10,7 +11,7 @@ const Login = () => {
     const [Password, setPassword] = useState("")
     const [ Cookie, setCookie ] = useCookies(["auth_token"]);
     const [Error, setError] = useState("")
-
+    const { enqueueSnackbar } = useSnackbar();
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -31,10 +32,10 @@ const Login = () => {
             const response = await Axios.post("http://localhost:4000/User/Login", data)
                 setCookie("auth_token", response.data.Token)
                 window.localStorage.setItem("UserID", response.data.UserID)
-                alert("Logged in successfully!") 
+                enqueueSnackbar("Logged in successfully!" , {variant: "success"} ) 
         } catch (error) { 
-            setError("Login unsuccessful!") 
-            console.log(error)
+            enqueueSnackbar("Login unsuccessful!" , {variant: "error"}  ) 
+            console.log(error) 
         }
     }
 

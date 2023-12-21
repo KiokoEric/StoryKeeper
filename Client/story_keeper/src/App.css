@@ -12,8 +12,10 @@ html {
 body {
   font-family: 'Instrument Serif', serif;
   font-size: 18px;
+  overflow-x: hidden;
 }
 .Success {
   color: green;
   font-size: 18px;
+  text-align: center;
 }
