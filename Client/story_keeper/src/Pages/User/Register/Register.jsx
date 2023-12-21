@@ -42,7 +42,7 @@ const Register = () => {
                 navigate("/Login")
             }) 
         } catch (error) {
-            enqueueSnackbar("Registration Failed!" , {variant: "error"} )  
+            enqueueSnackbar("Registration Failed!" , {variant: "error"})  
             console.error(error)
         }
     }

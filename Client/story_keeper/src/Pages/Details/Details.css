@@ -64,4 +64,98 @@
     width: 800px;
     white-space: pre-wrap;
     word-wrap: break-word;
+} 
+
+@media (max-width: 768px) {
+    .MoreInformation {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 0.5rem;
+        row-gap: 2rem;
+        margin: auto;
+        margin-top: 2rem;
+        padding-bottom: 8.5rem;
+        width: 768px;
+    }
+    .MoreInformation figcaption pre {
+        width: 400px;
+    } 
+}
+
+@media (max-width: 428px) {
+    .MoreInformation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        column-gap: 2.5rem;
+        row-gap: 2rem;
+        margin: auto;
+        margin-top: 2rem;
+        padding-bottom: 8.5rem;
+        width: 428px;
+    }
+    .MoreInformation figure {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 1rem;
+        width: 380px; 
+    }
+    .MoreInformation figure img {
+        border-radius: 4px;
+        height: 350px;
+        width: 250px;
+    }
+    #Edits {
+        margin-left: 12rem;
+    }
+    .MoreInformation figcaption {
+        width: 350px;
+    }
+    .MoreInformation figcaption h2 {
+        text-align: center;
+    }
+    .MoreInformation figcaption pre {
+        width: 350px;
+    } 
+}
+
+@media (max-width: 375px) {
+    .MoreInformation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        column-gap: 2.5rem;
+        row-gap: 2rem;
+        margin: auto;
+        margin-top: 2rem;
+        padding-bottom: 8.5rem;
+        width: 375px;
+    }
+    .MoreInformation figure {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        width: 300px; 
+    }
+    .MoreInformation figure img {
+        border-radius: 4px;
+        height: 350px;
+        width: 250px;
+    }
+    #Edits {
+        margin-left: 12rem;
+    }
+    .MoreInformation figcaption h2 {
+        text-align: center;
+    }
+    .MoreInformation figcaption pre {
+        width: 350px;
+    } 
 }
