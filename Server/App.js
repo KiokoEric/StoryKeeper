@@ -8,7 +8,7 @@ const app = express();
 // Middleware
 
 app.use(cors({
-    origin: ["https://deploy-mern-frontend.vercel.app"],
+    origin: ["https://story-keeper.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 }))
