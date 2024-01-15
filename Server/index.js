@@ -7,7 +7,7 @@ const app = express();
 // Middleware
 
 app.use(cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://story-keeper-server.vercel.app/"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 }))
@@ -26,5 +26,9 @@ mongoose.connect(dbUrl,  {useNewUrlParser: true,useUnifiedTopology: true})
 
 app.use("/User", require("./Routes/Authentication"))
 app.use("/Books", require("./Routes/BookRoute"))
+
+app.get("/", (req,res) => {
+    res.send("Welcome to Story Keeper")
+})
 
 app.listen(4000) 
