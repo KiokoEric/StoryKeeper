@@ -2,13 +2,12 @@ const express = require('express');
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const mysql = require("mysql");
 const app = express();
 
 // Middleware
 
 app.use(cors({
-    origin: ["https://story-keeper.vercel.app"],
+    origin: ["http://localhost:3000"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 }))

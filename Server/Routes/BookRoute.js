@@ -22,6 +22,10 @@ const verifyToken = async (req, res, next) => {
     }
 }
 
+BookRouter.get("/", (req,res) => {
+    res.json("Welcome to Story Keeper.")
+})
+
 BookRouter.post("/AddBook", verifyToken, async (req, res) => {
     const NewBook = new Books (req.body)
     try {
