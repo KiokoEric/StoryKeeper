@@ -28,7 +28,7 @@ app.use("/User", require("./Routes/Authentication"))
 app.use("/Books", require("./Routes/BookRoute"))
 
 app.get("/", (req,res) => {
-    res.send("Welcome to Story Keeper")
+    console.log("Welcome to Story Keeper")
 })
 
 app.listen(4000) 
