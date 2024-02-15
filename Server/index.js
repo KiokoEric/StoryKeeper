@@ -27,8 +27,6 @@ mongoose.connect(dbUrl,  {useNewUrlParser: true,useUnifiedTopology: true})
 app.use("/User", require("./Routes/Authentication"))
 app.use("/Books", require("./Routes/BookRoute"))
 
-app.get("/", (req,res) => {
+app.listen(4000, () => {
     console.log("Welcome to Story Keeper")
-})
-
-app.listen(4000) 
+} ) 
