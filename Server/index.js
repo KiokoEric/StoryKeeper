@@ -7,7 +7,7 @@ const app = express();
 // Middleware
 
 app.use(cors({
-    origin: ["https://story-keeper-sz52.vercel.app/"],
+    origin: ["https://story-keeper-sz52.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 }))
