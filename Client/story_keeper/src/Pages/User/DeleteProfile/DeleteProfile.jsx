@@ -16,7 +16,7 @@ const DeleteProfile = () => {
 
     const DeleteUser = () => {
         try{
-            Axios.delete(`http://localhost:4000/User/Delete/${myID}`, {
+            Axios.delete(`https://storykeeper-server.onrender.com/User/Delete/${myID}`, {
                 headers: { authorization: Cookie.auth_token }
             })
             .then(() => { 

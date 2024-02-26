@@ -19,7 +19,7 @@ const Edit = () => {
     const { _id } = useParams()
 
     useEffect (() => {
-        Axios.get(`http://localhost:4000/Books/${_id}`, {
+        Axios.get(`https://storykeeper-server.onrender.com/Books/${_id}`, {
                 headers: { authorization: Cookie.auth_token },
             }) 
         .then((Data) => { 

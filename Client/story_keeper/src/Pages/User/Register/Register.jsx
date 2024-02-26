@@ -36,7 +36,7 @@ const Register = () => {
         }
         try {
             setError(false)
-            await Axios.post("http://localhost:4000/User/Registration", data) 
+            await Axios.post("https://storykeeper-server.onrender.com/User/Registration", data) 
             .then(() => {
                 enqueueSnackbar("Registration Completed! Kindly Log in", {variant: "success"})
                 navigate("/Login")

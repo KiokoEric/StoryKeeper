@@ -13,7 +13,7 @@ const Details = () => {
 
     Axios.defaults.withCredentials = true;
     useEffect(() => {
-        Axios.get(`http://localhost:4000/Books/${id}`, {
+        Axios.get(`https://storykeeper-server.onrender.com/Books/${id}`, {
         headers: { authorization: Cookie.auth_token }
         }) 
         .then((Response) => {

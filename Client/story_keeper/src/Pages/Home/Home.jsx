@@ -20,7 +20,7 @@ const Home = () => {
     useEffect(() => {
 
     const fetchBooks = async () => {
-        await Axios.get(`http://localhost:4000/Books/${userID}/Books`, { 
+        await Axios.get(`https://storykeeper-server.onrender.com/Books/${userID}/Books`, { 
         headers: { authorization: Cookie.auth_token },
         }) 
         .then((Response) => {
@@ -41,7 +41,7 @@ const Home = () => {
     // Delete Book
 
     const handleDelete= (_id) => {
-        Axios.delete(`http://localhost:4000/Books/${_id}`, {
+        Axios.delete(`https://storykeeper-server.onrender.com/Books/${_id}`, {
             headers: { authorization: Cookie.auth_token }
         }) 
         .then(

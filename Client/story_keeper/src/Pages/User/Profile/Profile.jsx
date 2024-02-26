@@ -34,7 +34,7 @@ const Profile = () => {
 
         const FetchUser =() => {
         try{
-            Axios.get(`http://localhost:4000/User/${ID}`, {
+            Axios.get(`https://storykeeper-server.onrender.com/User/${ID}`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Data) => { 

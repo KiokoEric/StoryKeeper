@@ -33,7 +33,7 @@ const EditDetails = () => {
 
         const FetchUser =() => {
         try{
-            Axios.get(`http://localhost:4000/User/${id}`, {
+            Axios.get(`https://storykeeper-server.onrender.com/User/${id}`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Data) => { 
@@ -58,7 +58,7 @@ const EditDetails = () => {
             Name, Email, Password
         }
         try {
-            Axios.put(`http://localhost:4000/User/${id}`, data , {
+            Axios.put(`https://storykeeper-server.onrender.com/User/${id}`, data , {
                 headers: { authorization: Cookie.auth_token },
             }) 
             .then(() => { 
