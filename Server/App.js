@@ -27,3 +27,4 @@ mongoose.connect(dbUrl,  {useNewUrlParser: true,useUnifiedTopology: true})
 app.use("/User", require("./Routes/Authentication"))
 app.use("/Books", require("./Routes/BookRoute"))
 
+app.listen(4000)  
