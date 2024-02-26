@@ -7,7 +7,7 @@ const app = express();
 // Middleware
 
 app.use(cors({
-    origin: ["http://localhost:3000"], 
+    origin: ["https://storykeeper-0yvp.onrender.com"], 
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 }))
