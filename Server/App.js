@@ -19,7 +19,7 @@ app.use(cookieParser())
 const dbUrl = "mongodb+srv://KiokoEric:Victory2026@cluster0.zx2pvqa.mongodb.net/Stories?retryWrites=true&w=majority";
 
 mongoose.connect(dbUrl,  {useNewUrlParser: true,useUnifiedTopology: true})
-.then(() => console.log("Connected to the database!"))
+.then(() => console.log("Welcome to Story Keeper"))
 
 
 // Import Routes
@@ -27,6 +27,3 @@ mongoose.connect(dbUrl,  {useNewUrlParser: true,useUnifiedTopology: true})
 app.use("/User", require("./Routes/Authentication"))
 app.use("/Books", require("./Routes/BookRoute"))
 
-app.listen("https://storykeeper-server.onrender.com", () => {
-    console.log("Welcome to Story Keeper")
-} ) 
